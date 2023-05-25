@@ -19,7 +19,7 @@ for lr in 5e-5
 do
 for seed in ${seed}
 do
-  CUDA_VISIBLE_DEVICES=${device} python run.py --seed ${seed}  --lr ${lr} -e ${epoch} --train_bsz ${train_bsz} --explainer ${explainer} --topk 10 --task ${task} -tm ${target_model}
+  CUDA_VISIBLE_DEVICES=${device} python run.py --seed ${seed}  --lr ${lr} -e ${epoch} --train_bsz ${train_bsz} --explainer ${explainer} --topk 10 --task ${task} -tm ${target_model} --storage_root ${output_dir}
   #python run.py --discrete --seed ${seed} --lr ${lr} -e ${epoch} --train_bsz ${train_bsz} --explainer ${explainer}
   #python run.py --seed ${seed} --lr ${lr} -e ${epoch} --train_bsz ${train_bsz} --explainer ${explainer}
 done

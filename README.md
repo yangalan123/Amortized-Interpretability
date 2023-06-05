@@ -64,4 +64,5 @@ This file will automatically create Table 1-2 and Figure 2 in the paper.
 Note that running `run.py` will automatically compute the performance numbers in Table 3 and you can find them in the output directory. To save computational resources, this code will first check the model is already trained and saved. If not, it will train the model.
 
 Feel free to change the setting in `config.py` for better training performance.
+
 4. You can use `compute_amortized_model_consistency.py` to compute the consistency between Amortized Model and Shapley Values. You need to update the filepath there. This file will automatically create Table 5 in the paper.

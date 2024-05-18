@@ -57,7 +57,7 @@ We prepare a running script `thermostat/run.sh` to assist you. For example, you 
    bash run.sh task=yelp_polarity model=bert explainer=svs-3600 seed=1 batch_size=1 device=0
 ```
 
-We understand it might be computationally expensive to run all the seeds. So we provide a pre-computed Shapley Values [here](https://drive.google.com/file/d/1kOIEEuEHG-zDmZ3rwYLDOV-RtRyvBxiu/view?usp=sharing).
+We understand it might be computationally expensive to run all the seeds. So we provide pre-computed Shapley Values [here](https://drive.google.com/file/d/1kOIEEuEHG-zDmZ3rwYLDOV-RtRyvBxiu/view?usp=sharing).
 You can download and unzip it under the `thermostat` directory. The resulted directory structure should be `thermostat/experiments/...`.
 
 2. Then you can compute Spearman's Ranking Correlation Coefficient (SRCC) between different Shapley Values. 

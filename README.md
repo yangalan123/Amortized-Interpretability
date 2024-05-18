@@ -37,9 +37,16 @@ If you use this code as part of any published research, please acknowledge the f
 ## Dependency Installation
 For the main repo:
 ```
-conda create -p ./env python=3.7
+git clone https://github.com/yangalan123/Amortized-Interpretability.git
+cd Amortized-Interpretability
+git submodule update --init --recursive
+conda create -p ./env python=3.9 # As the upstream dependency is broken for 3.8, we use 3.9 here, subject to future updates.
 conda activate ./env # the environment position is optional, you can choose whatever places you like to save dependencies. Here I choose ./env for example.
+cd thermostat # we now have the local thermostat copy, so let's build it first
 pip install -r requirements.txt
+pip install -e .
+cd ..
+pip install -r requirements.txt # build the main repo dependencies
 ```
 
 For the dependency of `thermostat` and `InterpCalib`, please check their individual README.

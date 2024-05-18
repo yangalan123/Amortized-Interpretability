@@ -31,7 +31,7 @@ If you use this code as part of any published research, please acknowledge the f
 
 ## Project Structure
 1. `thermostat`: Configuration files we use to run Ranking Stability experiments. You should update it with original [thermotet](https://github.com/DFKI-NLP/thermostat) Repo to get most up-to-date implementation. Here we just upload our updated thermostat repo. 
-2. `InterpCalib`: [Calibration via Interpretation (ACL'22)](https://arxiv.org/abs/2110.07586) We update the [implementation](https://github.com/xiye17/InterpCalib) contributed by Xi Ye to 1) allow using different random seeds when computing Shapley Values; 2) updated the I/O interface to use our own outputs to do calibration. Chenghao (the main author) is working on a PR that can be merged later to InterpCalib so later this part is not necessarilly needed. 
+2. `InterpCalib`: [Calibration via Interpretation (ACL'22)](https://arxiv.org/abs/2110.07586) We update the [implementation](https://github.com/xiye17/InterpCalib) contributed by Xi Ye to 1) allow using different random seeds when computing Shapley Values; 2) updated the I/O interface to use our own outputs to do calibration. We here upload our updated InterpCalib repo.
 3. Other parts are just our own codes. Chenghao will do better packaging later to improve readability. But importantly, `amortized_model.py` is the main Amortized Model code and you can run via `run.py`. 
 
 ## Dependency Installation
@@ -40,11 +40,10 @@ For the main repo:
 git clone https://github.com/yangalan123/Amortized-Interpretability.git
 cd Amortized-Interpretability
 git submodule update --init --recursive
-conda create -p ./env python=3.9 # As the upstream dependency is broken for 3.8, we use 3.9 here, subject to future updates.
+conda create -p ./env python=3.9 # Python 3.8 should also work, but we use 3.9 here for better compatibility. This is subject to future updates.
 conda activate ./env # the environment position is optional, you can choose whatever places you like to save dependencies. Here I choose ./env for example.
 cd thermostat # we now have the local thermostat copy, so let's build it first
-pip install -r requirements.txt
-pip install -e .
+pip install -e . # please ignore the requirements.txt in thermostat/, as it is older and may result in unexpected errors
 cd ..
 pip install -r requirements.txt # build the main repo dependencies
 ```
